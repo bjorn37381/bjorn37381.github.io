@@ -7,3 +7,4 @@
 ### [Custom Created Fish GameMode](https://bjorn37381.github.io/Chrome_Fish_Game.html)
 ### [Low Gravity Donut Mode](https://bjorn37381.github.io/LOW_GRAVITY_SUBMODE.html)
 ### [Speed Donut Mode](https://bjorn37381.github.io/Unlimited_Speed_Submode.html)
+### [Ultra Fine Chineese Quality Dino Game](https://bjorn37381.github.io/Chineese_Chrome_Dino_Game.html)

@@ -7,3 +7,5 @@
 ### [Low Gravity Donut Mode](https://bjorn37381.github.io/LOW_GRAVITY_SUBMODE.html)
 ### [Speed Donut Mode](https://bjorn37381.github.io/Unlimited_Speed_Submode.html)
 ### [Ultra Fine Chineese Quality Dino Game](https://bjorn37381.github.io/Chineese_Chrome_Dino_Game.html)
+### [Mario Mode](https://bjorn37381.github.io/Dino_Mario_Mode.html)
+### [Broken Dino Mode](https://bjorn37381.github.io/Broken_Dino_Mode.html)

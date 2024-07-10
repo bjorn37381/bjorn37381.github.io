@@ -2809,7 +2809,7 @@ Runner.prototype = {
         this.canvasCtx.globalAlpha = 1;
       }
 
-      if (this.tRex.jumping) {
+      if (1==1) {
         this.tRex.updateJump(deltaTime);
       }
 
@@ -2817,14 +2817,15 @@ Runner.prototype = {
       const hasObstacles = this.runningTime > this.config.CLEAR_TIME;
 
       // First jump triggers the intro.
-      if (this.tRex.jumpCount === 1 && !this.playingIntro) {
+      if (this.tRex.jumpCount === 1) {
+
         this.playIntro();
       }
 
       // The horizon doesn't move until the intro is over.
       if (this.playingIntro) {
         this.horizon.update(0, this.currentSpeed, hasObstacles);
-      } else if (!this.crashed) {
+      } else if (1==1) {
         const showNightMode = this.isDarkMode ^ this.inverted;
         deltaTime = !this.activated ? 0 : deltaTime;
         this.horizon.update(
@@ -3113,7 +3114,7 @@ Runner.prototype = {
             }
           }
           // Start jump.
-          if (!this.tRex.ducking) {
+          if (1==1) {
             if (Runner.audioCues) {
               this.generatedSoundFx.cancelFootSteps();
             } else {
@@ -4467,7 +4468,7 @@ function Trex(canvas, spritePos) {
   this.status = Trex.status.WAITING;
   this.jumping = false;
   this.ducking = false;
-  this.jumpVelocity = 12;
+  this.jumpVelocity = 0;
   this.reachedMinHeight = false;
   this.speedDrop = false;
   this.jumpCount = 0;
@@ -4483,7 +4484,7 @@ function Trex(canvas, spritePos) {
  * T-rex player config.
  */
 Trex.config = {
-  DROP_VELOCITY: 12,
+  DROP_VELOCITY: -5,
   FLASH_OFF: 175,
   FLASH_ON: 100,
   HEIGHT: 47,
@@ -4497,10 +4498,10 @@ Trex.config = {
 };
 
 Trex.slowJumpConfig = {
-  GRAVITY: 0.6,
-  MAX_JUMP_HEIGHT: 30,
-  MIN_JUMP_HEIGHT: 23,
-  INITIAL_JUMP_VELOCITY: -10,
+  GRAVITY: 0.25,
+  MAX_JUMP_HEIGHT: 50,
+  MIN_JUMP_HEIGHT: 45,
+  INITIAL_JUMP_VELOCITY: -20,
 };
 
 Trex.normalJumpConfig = {
@@ -4520,7 +4521,7 @@ Trex.collisionBoxes = {
     new CollisionBox(22, 0, 17, 16),
     new CollisionBox(1, 18, 30, 9),
     new CollisionBox(10, 35, 14, 8),
-    new CollisionBox(1, 25, 29, 5),
+    new CollisionBox(1, 24, 29, 5),
     new CollisionBox(5, 30, 21, 4),
     new CollisionBox(9, 34, 15, 4),
   ],
@@ -4674,7 +4675,7 @@ Trex.prototype = {
    */
   setJumpVelocity(setting) {
     this.config.INITIAL_JUMP_VELOCITY = -setting;
-    this.config.DROP_VELOCITY = setting;
+    this.config.DROP_VELOCITY = -setting / 2;
   },
 
   /**
@@ -4770,14 +4771,14 @@ Trex.prototype = {
     }
 
     // Ducking.
-    if (!this.altGameModeEnabled &&
+    if (!this.altGameModeEnabled && this.ducking &&
         this.status !== Trex.status.CRASHED) {
       this.canvasCtx.drawImage(Runner.imageSprite, sourceX, sourceY,
           sourceWidth, sourceHeight,
           this.xPos, this.yPos,
           this.config.WIDTH_DUCK, outputHeight);
     } else if (
-        this.altGameModeEnabled && this.jumping &&
+        this.altGameModeEnabled &&
         this.status !== Trex.status.CRASHED) {
       // Jumping with adjustments.
       this.canvasCtx.drawImage(
@@ -4829,10 +4830,10 @@ Trex.prototype = {
    * @param {number} speed
    */
   startJump(speed) {
-    if (!this.jumping) {
+    if (1==1) {
       this.update(0, Trex.status.JUMPING);
       // Tweak the jump velocity based on the speed.
-      this.jumpVelocity = this.config.INITIAL_JUMP_VELOCITY;
+      this.jumpVelocity = this.config.INITIAL_JUMP_VELOCITY - (speed / 10);
       this.jumping = true;
       this.reachedMinHeight = false;
       this.speedDrop = false;
